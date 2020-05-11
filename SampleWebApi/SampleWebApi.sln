@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CerenetexUserManagement", "SampleWebApi\CerenetexUserManagement.csproj", "{6913D2B0-6896-4478-95D3-B7E020E7BDF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6913D2B0-6896-4478-95D3-B7E020E7BDF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6913D2B0-6896-4478-95D3-B7E020E7BDF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6913D2B0-6896-4478-95D3-B7E020E7BDF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6913D2B0-6896-4478-95D3-B7E020E7BDF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8C22007-9ED5-4539-93CB-4DCEC56F98BC}
+	EndGlobalSection
+EndGlobal
