@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CerenetexUserManagement.Model.HttpModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SampleWebApi.Model;
@@ -33,11 +34,22 @@ namespace SampleWebApi.Controllers
         {
             return Ok(userRepository.GetUser(Guid.Parse(id)));
         }
+
         [HttpPost]
         [Route("AddUser")]
-        public ActionResult AddUser([FromBody]User user)
+        public ActionResult AddUser([FromBody]ResponseUser user)
         {
-            return Ok(userRepository.AddUser(user));
+            User au = new User()
+            {
+                id = user.id,
+                Age = user.Age,
+                Dob = DateTime.Parse(user.Dob),
+                Profileimage = user.Profileimage,
+                Name = user.Name,
+                Ethnicity = user.Ethnicity,
+                Gender = user.Gender
+            };
+            return Ok(userRepository.AddUser(au));
             //return Ok(null);
         }
         [HttpPost]

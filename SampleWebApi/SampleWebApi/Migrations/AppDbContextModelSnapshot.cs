@@ -28,7 +28,7 @@ namespace SampleWebApi.Migrations
                     b.Property<string>("Age")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DOB")
+                    b.Property<DateTime?>("Dob")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Ethnicity")
@@ -40,8 +40,8 @@ namespace SampleWebApi.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("ProfileImage")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("Profileimage")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
