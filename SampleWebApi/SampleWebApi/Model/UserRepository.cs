@@ -8,7 +8,7 @@ namespace SampleWebApi.Model
 {
     public interface IUserRepository
     {
-        User GetUser(Guid id);
+        User GetUser(int id);
         IEnumerable<User> GetUsers();
         User AddUser(User user);
         User UpdateUser(User user);

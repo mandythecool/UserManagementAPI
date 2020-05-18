@@ -27,7 +27,7 @@ namespace SampleWebApi.Model
             throw new NotImplementedException();
         }
 
-        public User GetUser(Guid id)
+        public User GetUser(int id)
         {
             return DbContext.Users.Where(s => s.id == id).SingleOrDefault();
         }
@@ -44,6 +44,10 @@ namespace SampleWebApi.Model
             {
                 u.Age = user.Age;
                 u.Name = user.Name;
+                u.Dob = user.Dob;
+                u.Ethnicity = user.Ethnicity;
+                u.Gender = user.Gender;
+                u.Profileimage = user.Profileimage;
                 DbContext.SaveChanges();
             }
             return u;

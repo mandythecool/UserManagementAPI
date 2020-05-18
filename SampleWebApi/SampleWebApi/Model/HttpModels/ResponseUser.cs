@@ -8,7 +8,7 @@ namespace CerenetexUserManagement.Model.HttpModels
     public class ResponseUser
     {
 
-        public Guid id { get; set; }
+        public int id { get; set; }
         public string Name { get; set; }
         public string Age { get; set; }
         public string Profileimage { get; set; }

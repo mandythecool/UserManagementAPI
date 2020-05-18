@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Composition.Convention;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using CerenetexUserManagement.Model.HttpModels;
@@ -32,7 +34,7 @@ namespace SampleWebApi.Controllers
         [Route("GetUser")]
         public ActionResult GetUser(string id)
         {
-            return Ok(userRepository.GetUser(Guid.Parse(id)));
+            return Ok(userRepository.GetUser(int.Parse(id)));
         }
 
         [HttpPost]
@@ -49,14 +51,33 @@ namespace SampleWebApi.Controllers
                 Ethnicity = user.Ethnicity,
                 Gender = user.Gender
             };
+
+            using (var ms = new MemoryStream(Convert.FromBase64String("")))
+            {
+
+                //var img = Image.FromStream(ms);
+                //return new Tuple<int, int>(img.Width, img.Height); // or some other data container
+            }
+
+
             return Ok(userRepository.AddUser(au));
             //return Ok(null);
         }
         [HttpPost]
         [Route("UpdateUser")]
-        public ActionResult UpdateUser([FromBody]User user)
+        public ActionResult UpdateUser([FromBody]ResponseUser user)
         {
-            return Ok(userRepository.UpdateUser(user));
+            User au = new User()
+            {
+                id = user.id,
+                Age = user.Age,
+                Dob = DateTime.Parse(user.Dob),
+                Profileimage = user.Profileimage,
+                Name = user.Name,
+                Ethnicity = user.Ethnicity,
+                Gender = user.Gender
+            };
+            return Ok(userRepository.UpdateUser(au));
         }
     }
     public class GetResponseModel

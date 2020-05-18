@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SampleWebApi.Model;
 
-namespace SampleWebApi.Migrations
+namespace CerenetexUserManagement.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200513063648_lostchanges")]
-    partial class lostchanges
+    [Migration("20200515083625_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,9 +23,10 @@ namespace SampleWebApi.Migrations
 
             modelBuilder.Entity("SampleWebApi.Model.Entities.User", b =>
                 {
-                    b.Property<Guid>("id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Age")
                         .HasColumnType("nvarchar(max)");
